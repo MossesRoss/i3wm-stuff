@@ -149,6 +149,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume.sh
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume.sh down
 bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume.sh mute
 
+
+# Just minutes
+bindsym $mod+t exec --no-startup-id ~/.config/i3/scripts/just_minute.sh
+
 # --- RESIZE MODE ---
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
