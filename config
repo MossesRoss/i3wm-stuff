@@ -177,10 +177,18 @@ bindsym $mod+r mode "resize"
 default_border pixel 0
 default_floating_border pixel 0
 
+# Read Jarvis
+bindsym $mod+p exec --no-startup-id ~/.local/bin/jarvis_read.sh
+
+bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/jarvis_read.sh stop
+
 
 # --- AUTOSTART APPLICATIONS ---
 
 exec --no-startup-id bash -c "sleep 2 && ~/.local/bin/parrot_greet.sh"
+
+# Start Stealth Perimeter Monitor
+exec_always --no-startup-id ~/.local/bin/perimeter_watch.sh
 
 # Initialize Dual Monitors (exec_always ensures it triggers on restart)
 exec_always --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --auto --left-of eDP-1
