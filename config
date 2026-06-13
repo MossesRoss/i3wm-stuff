@@ -140,6 +140,8 @@ bindsym $mod+Shift+S exec systemctl suspend
 # Launch Flameshot for screenshots
 bindsym Insert exec --no-startup-id flameshot gui
 
+bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/welcome.sh
+
 # Date and Time Scripts (Separated to prevent CopyQ clipboard overwrite)
 bindsym $mod+Shift+d exec --no-startup-id ~/.config/i3/scripts/copy_date.sh
 bindsym $mod+Shift+t exec --no-startup-id ~/.config/i3/scripts/copy_time.sh
@@ -177,6 +179,8 @@ default_floating_border pixel 0
 
 
 # --- AUTOSTART APPLICATIONS ---
+
+exec --no-startup-id bash -c "sleep 2 && ~/.local/bin/parrot_greet.sh"
 
 # Initialize Dual Monitors (exec_always ensures it triggers on restart)
 exec_always --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --auto --left-of eDP-1
